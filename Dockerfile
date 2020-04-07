@@ -10,7 +10,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # add and install requirements.txt
-COPY ./requirements.txt /app/requirements.txt
+COPY ./app/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # add entrypoint.sh
@@ -18,7 +18,7 @@ COPY ./entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # add the app
-COPY ./app.py /app/app.py
+COPY ./app/app.py /app/app.py
 
 # expose port
 EXPOSE 5000
