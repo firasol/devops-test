@@ -3,7 +3,7 @@
 
 - `minikube` was used to develop this example:
 ```bash
-$ Minikube Version
+$ minikube Version
 Minikube Version: V1.9.2
 Commit: 93af9c1e43cab9618e301bc9fa720c63d5efa393
 ```
@@ -21,6 +21,12 @@ And append this line to the end of `/etc/hosts` file:
 `hello.world.py` is a dummy URL this application would respond on
 
 - Please make sure that your local docker config points to a container registry that is accessible by minikube. For this example, I have used docker hub to push the container image to before kubernetes can pull and run within the Pod
+
+- Make sure to set the environment variable `REGISTRY_PATH` to the container registry prefix (path) that the image will be pushed to
+```bash
+# For example
+export REGISTRY_PATH=<your_docker_hub_location>
+```
 
 - Run the following on the command line in order to automate the build, publish, and test stages:
 ```bash
