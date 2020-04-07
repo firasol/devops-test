@@ -15,9 +15,8 @@ spec:
     spec:
       containers:
         - name: hello-world-py
-          image: fabughazaleh/hello-world-py:latest
-          # image: gcr.io/omega-dahlia-260119/hello-world-py
-          imagePullPolicy: "Always"
+          image: {{REGISTRY_PATH}}/hello-world-py:latest
+          imagePullPolicy: Always
           resources: {}
           ports:
           - containerPort: 5000
